@@ -1,0 +1,82 @@
+.clicker {
+  cursor: pointer;
+  position: fixed;
+  z-index: 901;
+  right: 15px;
+  top: 15px;
+  padding: 5px 0;
+  width: 12px;
+}
+
+.menuBtn {
+  position: absolute;
+  display: block;
+  background: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 0;
+  height: 1px;
+  z-index: 900;
+}
+
+.menuBtn:before {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 1px;
+  top: -4px;
+  left: 0;
+  content: "";
+}
+
+.menuBtn:after {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  content: "";
+}
+
+.menu {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  display: grid;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+  z-index: 900;
+  transition: all .3s ease;
+}
+
+.menuWrap:global(.active) .menu {
+  opacity: 1;
+  visibility: visible;
+  transition: all .3s ease;
+}
+
+.menuWrap:global(.active) .menuBtn, .menuWrap:global(.active) .menuBtn:before, .menuWrap:global(.active) .menuBtn:after {
+  background: #40407a;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  padding: 0 6px;
+  margin: 3px 0;
+}
+
+.nav li a {
+  color: #40407a;
+}
